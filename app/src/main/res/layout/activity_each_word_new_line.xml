@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EachWordNewLine">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/textView_label_EachWordNewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Print Each Word in a New Line"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/editTextEnterString_EachWordNewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your String Here..."
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:layout_below="@+id/textView_label_EachWordNewLine"/>
+
+        <Button
+            android:id="@+id/btn_caculateEachWordNewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to Find out"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextEnterString_EachWordNewLine"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/textView_result_EachWordNewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="RESULT"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="200dp"
+            android:layout_below="@id/btn_caculateEachWordNewLine"
+            android:inputType="textMultiLine"/>
+
+        <Button
+            android:id="@+id/btnResetEachWordNewLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textView_result_EachWordNewLine"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
