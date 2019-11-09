@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private Button btnFindFactorialOfNumber, btnFindfactorsOfNumber, btnTables,
     btnPrimeOrComposite, btnPerfectNumber, btnSumOfDigits, btnPalindrome, btnAutomorphic,
-    btnNiven, btnVowelConsonants, btnEachWordNewLine, btnPigLatin;
+    btnNiven, btnVowelConsonants, btnEachWordNewLine, btnPigLatin, btnAnagram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +119,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAnagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Anagram.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
@@ -147,5 +155,6 @@ public class MainActivity extends AppCompatActivity {
         btnVowelConsonants = findViewById(R.id.btn_VowelConsonant);
         btnEachWordNewLine = findViewById(R.id.btn_EachWordNewLine);
         btnPigLatin = findViewById(R.id.btn_PigLatin);
+        btnAnagram = findViewById(R.id.btn_Anagram);
     }
 }

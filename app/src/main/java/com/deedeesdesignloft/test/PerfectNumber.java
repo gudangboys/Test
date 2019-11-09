@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class PerfectNumber extends AppCompatActivity {
         setContentView(R.layout.activity_perfect_number);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculatePerfectNumber.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +68,18 @@ public class PerfectNumber extends AppCompatActivity {
         btnCalculatePerfectNumber = findViewById(R.id.btn_caculatePerfectNumber);
         btnResetPerfectNumber = findViewById(R.id.btnResetPerfectNumber);
         textViewResultPerfectNumber = findViewById(R.id.textView_result_perfectNumber);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

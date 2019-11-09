@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,8 @@ public class PrimeOrComposite extends AppCompatActivity {
         setContentView(R.layout.activity_prime_or_composite);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculatePrimeOrComposite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,5 +71,18 @@ public class PrimeOrComposite extends AppCompatActivity {
         btnCalculatePrimeOrComposite = findViewById(R.id.btn_caculatePrimeOrComposite);
         btnResetPrimeOrComposite = findViewById(R.id.btnResetPrimeOrComposite);
         textViewResultPrimeOrComposite = findViewById(R.id.textView_result_primeOrComposite);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

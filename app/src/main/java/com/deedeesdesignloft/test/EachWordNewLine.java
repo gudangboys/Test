@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class EachWordNewLine extends AppCompatActivity {
         setContentView(R.layout.activity_each_word_new_line);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculateEachWordNewLine.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,5 +69,18 @@ public class EachWordNewLine extends AppCompatActivity {
         btnCalculateEachWordNewLine = findViewById(R.id.btn_caculateEachWordNewLine);
         btnResetEachWordNewLine = findViewById(R.id.btnResetEachWordNewLine);
         textViewResultEachWordNewLine = findViewById(R.id.textView_result_EachWordNewLine);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

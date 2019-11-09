@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class VowelConsonantsSpaces extends AppCompatActivity {
         setContentView(R.layout.activity_vowel_consonants_spaces);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculateVowelConsonants.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,5 +78,18 @@ public class VowelConsonantsSpaces extends AppCompatActivity {
         btnCalculateVowelConsonants = findViewById(R.id.btn_caculateVowelConsonant);
         btnResetVowelConsonants = findViewById(R.id.btnResetVowelConsonant);
         textViewResultVowelConsonants = findViewById(R.id.textView_result_VowelConsonant);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

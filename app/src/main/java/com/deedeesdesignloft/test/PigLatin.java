@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class PigLatin extends AppCompatActivity {
         setContentView(R.layout.activity_pig_latin);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculatePigLatin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +83,18 @@ public class PigLatin extends AppCompatActivity {
         btnCalculatePigLatin = findViewById(R.id.btn_caculatePigLatin);
         btnResetPigLatin = findViewById(R.id.btnResetPigLatin);
         textViewResultPigLatin = findViewById(R.id.textView_result_PigLatin);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

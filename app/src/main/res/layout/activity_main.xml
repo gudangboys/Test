@@ -122,6 +122,15 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="12dp"/>
 
+            <Button
+                android:id="@+id/btn_Anagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_PigLatin"
+                android:text="Anagram"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"/>
+
 
         </RelativeLayout>
 

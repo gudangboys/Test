@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class Palindrome extends AppCompatActivity {
         setContentView(R.layout.activity_palindrome);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculatePalindrome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,5 +73,18 @@ public class Palindrome extends AppCompatActivity {
         btnCalculatePalindrome = findViewById(R.id.btn_caculatePalindrome);
         btnResetPalindrome = findViewById(R.id.btnResetPalindrome);
         textViewResultPalindrome = findViewById(R.id.textView_result_Palindrome);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

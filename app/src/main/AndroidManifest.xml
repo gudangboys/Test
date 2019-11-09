@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PigLatin"></activity>
+        <activity android:name=".Anagram"></activity>
+        <activity android:name=".PigLatin" />
         <activity android:name=".EachWordNewLine" />
         <activity android:name=".VowelConsonantsSpaces" />
         <activity android:name=".Niven" />

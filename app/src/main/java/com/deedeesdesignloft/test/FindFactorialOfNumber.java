@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ public class FindFactorialOfNumber extends AppCompatActivity {
         setContentView(R.layout.activity_find_factorial_of_number);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnFindFactorial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +68,19 @@ public class FindFactorialOfNumber extends AppCompatActivity {
 
         }
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

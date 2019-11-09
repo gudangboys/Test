@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class Automorphic extends AppCompatActivity {
         setContentView(R.layout.activity_automorphic);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculateAutomorphic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +68,18 @@ public class Automorphic extends AppCompatActivity {
         btnCalculateAutomorphic = findViewById(R.id.btn_caculateAutomorphic);
         btnResetAutomorphic = findViewById(R.id.btnResetAutomorphic);
         textViewResultAutomorphic = findViewById(R.id.textView_result_Automorphic);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

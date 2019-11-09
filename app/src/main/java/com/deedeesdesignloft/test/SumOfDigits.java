@@ -3,6 +3,7 @@ package com.deedeesdesignloft.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class SumOfDigits extends AppCompatActivity {
         setContentView(R.layout.activity_sum_of_digits);
 
         initViews();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnCalculateSumOfDigits.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,5 +66,18 @@ public class SumOfDigits extends AppCompatActivity {
         btnCalculateSumOfDigits = findViewById(R.id.btn_caculateSumOfDigits);
         btnResetSumOfDigits = findViewById(R.id.btnResetSumOfDigits);
         textViewResultSumOfDigits = findViewById(R.id.textView_result_SumOfDigits);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }
